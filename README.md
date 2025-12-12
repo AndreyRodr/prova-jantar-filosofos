@@ -139,7 +139,22 @@ Nesta abordagem, a complexidade de sincronização é removida dos filósofos e 
 java .\src\tarefa4\Main.java
 # Execute por 2 minutos. Observe a distribuição equilibrada das refeições.
 ```
-Rodar testes individuais:
+
+### 📈 Tarefa 5: Análise Comparativa e Métricas
+Esta etapa consolida o projeto através de um teste de estresse e coleta de dados. As soluções estáveis (Tarefas 2, 3 e 4) foram executadas por **5 minutos** contínuos para gerar uma base estatística confiável.
+
+**Métricas Avaliadas:**
+1.  **Throughput:** Número total de refeições servidas.
+2.  **Latência:** Tempo médio de espera entre sentir fome e conseguir comer.
+3.  **Eficiência:** Taxa de ocupação dos garfos.
+4.  **Justiça (Fairness):** Cálculo do *Coeficiente de Variação (CV)* para medir se todos comeram quantidades similares ou se houve privilégios.
+
+**Resultados da Análise:**
+O relatório completo discute os trade-offs entre complexidade de código, prevenção de deadlock e performance bruta. Ele responde qual solução é mais adequada para cenários de alta concorrência versus cenários de recursos escassos.
+
+👉 **[Acesse o RELATORIO.md para ver os Gráficos e Tabelas](./RELATORIO.md)**
+
+### Rodar testes individuais:
 
 ``` Bash
 
@@ -155,13 +170,4 @@ java -cp "src;test" .\test\TesteTarefa3.java
 # Teste Tarefa 4 (Monitores)
 java -cp "src;test" .\test\TesteTarefa4.java
 ```
-### 📊 Relatório Final
-Para uma análise aprofundada sobre:
-
-# Comparação de desempenho (tempo de execução vs. throughput).
-
-# Justificativa teórica para a prevenção de Deadlocks.
-
-# Gráficos de utilização de CPU/Threads.
-
-Consulte o arquivo ./RELATORIO.md.
+*Desenvolvido para a disciplina de Programação Paralela e Distribuída.*
