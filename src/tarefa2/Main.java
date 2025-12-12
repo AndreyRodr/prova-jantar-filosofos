@@ -2,6 +2,8 @@ package tarefa2;
 public class Main {
     public static void main(String[] args) {
         int quantidade = 5;
+        long tempoExecucaoSegundos = 120;
+
         Garfo[] garfos = new Garfo[quantidade];
         Filosofo[] filosofos = new Filosofo[quantidade];
 
@@ -17,14 +19,14 @@ public class Main {
             filosofos[i] = new Filosofo(i, garfoEsq, garfoDir);
         }
 
-        System.out.println("Iniciando Jantar...");
+        System.out.println("Iniciando Jantar por " + tempoExecucaoSegundos + " segundos...");
 
         for (Filosofo f : filosofos) {
             f.start();
         }
 
         // Thread auxiliar para mostrar estatísticas a cada 5 segundos
-        new Thread(() -> {
+        Thread statsThread = new Thread(() -> {
             try {
                 while (true) {
                     Thread.sleep(5000);
@@ -35,8 +37,33 @@ public class Main {
                     System.out.println("---------------------------------\n");
                 }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                // Thread interrompida, sai do loop
             }
-        }).start();
+        });
+        
+        // Define como Daemon: se o main acabar, esta thread morre junto automaticamente
+        statsThread.setDaemon(true);
+        statsThread.start();
+
+        // --- CONTROLE DE TEMPO ---
+        try {
+            // A thread main dorme pelo tempo definido, deixando a simulação rodar
+            Thread.sleep(tempoExecucaoSegundos * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // --- ENCERRAMENTO ---
+        System.out.println("\nTempo de execução esgotado (" + tempoExecucaoSegundos + "s).");
+        System.out.println("Encerrando o jantar...");
+        
+        // Imprime o estado final antes de fechar
+        System.out.println("\n--- RESULTADO FINAL ---");
+        for (Filosofo f : filosofos) {
+            System.out.println("Filósofo " + f.getIdFilosofo() + " terminou com " + f.getRefeicoes() + " refeições.");
+        }
+        
+        // Força o encerramento da JVM e de todas as threads dos filósofos
+        System.exit(0);
     }
 }

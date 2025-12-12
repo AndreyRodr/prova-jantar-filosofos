@@ -68,7 +68,7 @@ java -cp "src;test" .\test\TesteTarefa4.java
 
 ```
 
-📊 Relatório Final
+### 📊 Relatório Final
 Consulte o arquivo RELATORIO.md para ver a comparação de desempenho, gráficos e conclusões sobre as diferentes abordagens.
 
 Desenvolvido para a disciplina de Programação Paralela.
