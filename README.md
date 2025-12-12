@@ -10,4 +10,4 @@ Como o garfo 4 está livre, o Filósofo 3 (que já tem o 3) consegue pegar o 4 e
 
 O ciclo é desfeito.
 
-(Tarefa 3):
+(Tarefa 3): A solução limita o número de filósofos concorrentes a $N-1$ (neste caso, 4). O Princípio da Casa dos Pombos garante que, se temos 5 garfos e apenas 4 filósofos sentados, mesmo que cada um pegue um garfo (4 garfos ocupados), haverá necessariamente 1 garfo livre. Como os filósofos estão dispostos em círculo, este garfo livre estará ao lado de um filósofo que já tem um garfo, permitindo que ele complete o par, coma e liberte os dois garfos, permitindo que o ciclo prossiga.
