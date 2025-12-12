@@ -16,13 +16,6 @@ Este repositório contém as soluções para a Avaliação Final de Programaçã
 ### Pré-requisitos
 * Java JDK 8 ou superior.
 
-### Compilação
-Abra o terminal na raiz do projeto e crie a pasta de binários:
-```bash
-mkdir bin
-javac -d bin src/tarefa1/*.java src/tarefa2/*.java src/tarefa3/*.java src/tarefa4/*.java
-```
-
 ### Execução
 Para rodar cada tarefa, utilize os comandos abaixo:
 
@@ -30,30 +23,28 @@ Para rodar cada tarefa, utilize os comandos abaixo:
 
 ```Bash
 
-java -cp bin tarefa1.Main
+java .\src\tarefa1\Main.java
 (Nota: Esta tarefa pode travar propositadamente).
 ```
 ### Tarefa 2 (Hierarquia)
 
 ``` Bash
 
-java -cp bin tarefa2.Main
+java .\src\tarefa2\Main.java
 ```
 ### Tarefa 3 (Semáforos)
 
 ```Bash
 
-java -cp bin tarefa3.Main
+java .\src\tarefa3\Main.java
 ```
 ### Tarefa 4 (Monitores)
 
 ```Bash
 
-java -cp bin tarefa4.Main
+java .\src\tarefa4\Main.java
 ```
 ### 🧪 Como Executar os Testes
-Para validar a lógica do Monitor (Tarefa 4):
-
 ``` Bash
 
 javac -cp src test/*.java
