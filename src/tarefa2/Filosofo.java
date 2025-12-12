@@ -35,7 +35,7 @@ public class Filosofo extends Thread {
     public void run() {
         try {
             while (true) {
-                acao("aguardar");
+                acao("pensar");
 
                 log("está com fome.");
 

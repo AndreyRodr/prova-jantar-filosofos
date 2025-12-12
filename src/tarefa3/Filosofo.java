@@ -40,7 +40,7 @@ public class Filosofo extends Thread {
         try {
             while (true) {
                 // Pensar
-                acao("aguardar");
+                acao("pensar");
                 log("está com fome.");
 
                 // Tentar entrar na mesa (Semáforo)

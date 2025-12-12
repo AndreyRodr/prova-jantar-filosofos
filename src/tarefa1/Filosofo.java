@@ -22,7 +22,7 @@ public class Filosofo extends Thread {
     private void acao(String verbo) throws InterruptedException {
         // Se for aguardar, é muito rápido (0 a 10ms) para gerar concorrência logo
         // Se for comer, demora 1 segundo
-        int tempo = verbo.equals("aguardar") ? random.nextInt(10) : 1000; 
+        int tempo = verbo.equals("pensar") ? random.nextInt(10) : 1000; 
         Thread.sleep(tempo);
     }
 
@@ -31,8 +31,8 @@ public class Filosofo extends Thread {
         try {
             while (true) {
                 // Pensar
-                log("está aguardando.");
-                acao("aguardar");
+                log("está pensando.");
+                acao("pensar");
 
                 // Tentar pegar os garfos
                 log("está com fome e tentando pegar o garfo esquerdo (" + garfoEsquerdo.getId() + ").");
