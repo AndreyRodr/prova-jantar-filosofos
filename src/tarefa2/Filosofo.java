@@ -1,3 +1,4 @@
+package tarefa2;
 import java.util.Random;
 
 public class Filosofo extends Thread {
